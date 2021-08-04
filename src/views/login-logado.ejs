@@ -1,0 +1,63 @@
+<%- include('includes/head') %>
+  <%- include('includes/nav') %>
+
+    <div class="container">
+      <div class="row">
+        <div>
+          <h1>Ola <%= user.email.charAt(0).toUpperCase() + user.email.slice(1, user.email.indexOf("@")) %></h1>
+          
+          <p>Sua agenda</p>
+
+          <%- include('includes/messages'); %>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="schedule-container">
+        <div class="schedule">
+          <h1 class="">Agenda</h1>
+          <p class="">Seus contatos estão abaixo</p>
+  
+          <%- include('includes/messages') %>
+            <% if(contatos.length> 0) { %>
+              <div class="schedule-contacts">
+                <table class="schedule-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Lastname</th>
+                      <th>CellNumber</th>
+                      <th>Email</th>
+                    </tr>
+                  </thead>
+                  <% contatos.forEach(contato=> { %>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <%= contato.nome %>
+                        </td>
+                        <td>
+                          <%= contato.sobrenome %>
+                        </td>
+                        <td>
+                          <%= contato.telefone %>
+                        </td>
+                        <td>
+                          <%= contato.email %>
+                        </td>
+                        <td><a href="/contato/index/<%= contato._id %>">Editar</a></td>
+                        <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+                      </tr>
+                    </tbody>
+                    <% }); %>
+                </table>
+              </div>
+              <% } else { %>
+                <p class="">Não existem contatos na sua agenda.</p>
+                <% } %>
+        </div>
+        <div class=""></div>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>

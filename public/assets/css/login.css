@@ -1,0 +1,61 @@
+.container {
+    margin-top: 3em;
+}
+
+.container > div {
+    width: 50%;
+    margin: auto;
+    box-shadow: 0 0 1em rgba(3, 51, 61, 0.769);
+    border-radius: 10px;
+}
+
+.container-header {
+    text-align: center;
+    padding: .5em;
+}
+
+.container-header h1 {
+    color: rgba(34, 58, 167, 0.865);
+}
+.container-functionality {
+    display: flex;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.functionality-signup, .functionality-login {
+    padding: .5em;
+    margin: 1em .5em 2em;
+    box-shadow: 0 0 .1em rgba(3, 65, 100, 0.769);
+    border-radius: 10px;
+}
+
+.functionality-signup h4, .functionality-login h4 {
+    text-align: center;
+    font-size: 1.3em;
+    padding: .5em;
+    color: rgba(34, 58, 167, 0.865);
+}
+
+.functionality-login form, .functionality-signup form{
+    margin-top: .5em;
+}
+
+.functionality-login form input, .functionality-signup form input {
+    margin-top: 1em;
+}
+.input-password {
+    margin-left: .3em;
+}
+
+.form-button {
+    display: flex;
+    width: max-content;
+    border-radius: 10px;
+    margin: .7em auto;
+    padding: .5em;
+    background: rgba(11, 78, 126, 0.838);
+    border: none;
+    color: white;
+    cursor: pointer;
+}

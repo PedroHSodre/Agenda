@@ -1,0 +1,43 @@
+.container {
+    margin-top: 2em;
+}
+
+.content-container {
+    width: 30%;
+    margin: auto;
+    box-shadow: 0 0 1em rgba(3, 25, 61, 0.769);
+    border-radius: 10px;
+    padding: 2em;
+}
+
+.content-container h1 {
+    color: rgba(34, 58, 167, 0.865);
+}
+
+.content-container h1, .content-container p {
+    text-align: center;
+}
+
+.content-container form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.content-container form > div {
+    margin: .5em auto;
+    width: 15em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-container button {
+    width: max-content;
+    margin: auto;
+    border-radius: 10px;
+    padding: .5em;
+    background: rgba(11, 78, 126, 0.838);
+    border: none;
+    color: white;
+    cursor: pointer;
+}

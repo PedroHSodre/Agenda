@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../public/assets/css/main.css">
+  <link rel="stylesheet" href="../../public/assets/css/contact.css">
+  <title>Agenda</title>
+</head>
+
+<body>
+  <%- include('includes/nav') %>
+
+    <div class="container">
+      <div class="content-container">
+        <h1>Contato</h1>
+        <p>Crie ou edite seu contato abaixo:</p>
+
+        <%- include('includes/messages') %>
+
+          <% if(contato._id) { %>
+            <form action="/contato/edit/<%= contato._id %>" method="POST">
+              <% } else { %>
+                <form action="/contato/register" method="POST">
+                  <% } %>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="form-group mb-3">
+                      <label>Nome:</label>
+                      <input value="<%= contato.nome %>" type="text" class="form-control" name="nome">
+                    </div>
+                    <div class="form-group mb-3">
+                      <label>Sobrenome:</label>
+                      <input value="<%= contato.sobrenome %>" type="text" class="form-control" name="sobrenome">
+                    </div>
+                    <div class="form-group mb-3">
+                      <label>Email:</label>
+                      <input value="<%= contato.email %>" type="email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group mb-3">
+                      <label>Telefone:</label>
+                      <input value="<%= contato.telefone %>" type="tel" class="form-control" name="telefone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+      </div>
+    </div>
+
+    <%- include('includes/footer') %>

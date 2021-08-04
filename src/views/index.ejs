@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../public/assets/css/main.css">
+  <title>Agenda</title>
+</head>
+
+<body>
+  <nav class="header-nav">
+    <div>
+      <h2><a href="/">Agenda</a></h2>
+    </div>
+    <% if(user) { %>
+      <div>
+        <a class=" " href="/contato/index">Cadastrar novo contato</a>
+        <a href="/login/logout">Sair</a>
+      </div>
+    <% } else { %>
+        <div>
+          <a href="./login/index">Login</a>
+        </div>
+      <% } %>
+  </nav>
+  <div class="main">
+    <div class="schedule-container">
+      <div class="schedule">
+        <h1 class="">Agenda</h1>
+        <p class="">Seus contatos estão abaixo</p>
+
+        <%- include('includes/messages') %>
+          <% if(contatos.length> 0) { %>
+            <div class="schedule-contacts">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>CellNumber</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <% contatos.forEach(contato=> { %>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <%= contato.nome %>
+                      </td>
+                      <td>
+                        <%= contato.sobrenome %>
+                      </td>
+                      <td>
+                        <%= contato.telefone %>
+                      </td>
+                      <td>
+                        <%= contato.email %>
+                      </td>
+                      <td><a href="/contato/index/<%= contato._id %>">Editar</a></td>
+                      <td><a class="text-danger" href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+                    </tr>
+                  </tbody>
+                  <% }); %>
+              </table>
+            </div>
+            <% } else { %>
+              <p class="">Não existem contatos na sua agenda.</p>
+              <% } %>
+      </div>
+      <div class=""></div>
+    </div>
+  </div>
+
+  <%- include('includes/footer') %>

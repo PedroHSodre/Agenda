@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../public/assets/css/main.css">
+    <link rel="stylesheet" href="../../public/assets/css/login.css">
+    <title>Agenda</title>
+  </head>
+<body>
+  <%- include('includes/nav') %>
+
+  <div class="container">
+    <div>
+      <div class="container-header">
+        <h1 class="">Criar conta ou Entrar</h1>
+        <p class="">Faça login ou crie sua conta abaixo</p>
+      </div>
+      <%- include('includes/messages'); %>
+      <div class="container-functionality">
+          <div class="functionality-signup">
+            <h4>Faça seu cadastro</h4>
+
+            <p>Se você ainda não tem conta, preencha o formulario abaixo:</p>
+
+            <form action="/login/register" method="POST">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <div class="">
+                <label class="">Digite seu e-mail</label>
+                <input type="email" class="" id="exampleInputEmail1" name="email">
+              </div>
+
+              <div class="">
+                <label class="">Digite sua senha</label>
+                <input type="password" class="input-password" id="exampleInputEmail1" name="password">
+              </div>
+
+              <button type="submit" class="form-button">Criar minha conta</button>
+            </form>
+          </div>
+          <div class="functionality-login">
+            <h4>Fazer login</h4>
+
+            <p>Se você ainda ja tem conta, preencha o formulario abaixo:</p>
+
+            <form action="/login/login" method="POST">
+              <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+              <div class="mb-3">
+                <label class="">Digite seu e-mail</label>
+                <input type="email" class="" id="exampleInputEmail1" name="email">
+              </div>
+
+              <div class="">
+                <label class="">Digite sua senha</label>
+                <input type="password" class="input-password" id="exampleInputEmail1" name="password">
+              </div>
+
+              <button type="submit" class="form-button">Entrar</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div>
+        <div class="">
+          
+
+          
+            <div class="">
+              
+            </div>
+            <div class="">
+              
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%- include('includes/footer') %>
